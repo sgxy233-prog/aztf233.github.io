@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#671426">
+  <meta name="description" content="24道生活情境题，看看你在人际冲突中最常怎样保护自己。">
+  <title>人际边界反应测试</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="app" class="app-shell" aria-live="polite">
+    <section id="loading" class="screen center-screen">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>正在准备题目…</p>
+    </section>
+
+    <section id="welcome" class="screen hidden">
+      <div class="eyebrow">BOUNDARY RESPONSE TEST</div>
+      <div class="hero-mark" aria-hidden="true">界</div>
+      <h1>你在关系里<br><em>最不好惹</em>的一面是什么？</h1>
+      <p class="lede">24个真实生活情境，看看你面对冲突时，最常怎样保护自己、照顾关系。</p>
+      <div class="meta-row" aria-label="测试信息">
+        <span><strong>24</strong> 道题</span>
+        <span><strong>3</strong> 分钟</span>
+        <span><strong>5</strong> 种倾向</span>
+      </div>
+      <button id="startBtn" class="primary-btn">开始测试 <span>→</span></button>
+      <p class="microcopy">请选现实中的第一反应，不要选“应该怎样”</p>
+    </section>
+
+    <section id="quiz" class="screen hidden">
+      <header class="quiz-header">
+        <button id="backBtn" class="icon-btn" aria-label="返回上一题">←</button>
+        <div class="progress-wrap">
+          <div class="progress-meta"><span id="progressLabel">01 / 24</span><span id="categoryLabel"></span></div>
+          <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        </div>
+      </header>
+      <article id="questionCard" class="question-card">
+        <p class="question-kicker">如果是现实中的你——</p>
+        <h2 id="questionText"></h2>
+        <div id="options" class="options" role="group" aria-label="请选择一个答案"></div>
+      </article>
+      <p class="quiz-footnote">没有标准答案 · 选择最接近你的一个</p>
+    </section>
+
+    <section id="checkpoint" class="screen hidden center-screen">
+      <div class="checkpoint-number" id="checkpointNumber">08</div>
+      <p class="eyebrow">进度提示</p>
+      <h2 id="checkpointTitle">你的边界模式<br>开始显现</h2>
+      <p id="checkpointText">继续按第一反应选择，会比反复斟酌更接近真实的你。</p>
+      <button id="continueBtn" class="primary-btn">继续答题 <span>→</span></button>
+    </section>
+
+    <section id="tieBreak" class="screen hidden">
+      <div class="eyebrow">最后一步</div>
+      <h2>如果只能选一句，<br>哪句最像现实中的你？</h2>
+      <p class="lede small">你的最高分出现了并列。请凭第一反应选出更常见的自己。</p>
+      <div id="tieOptions" class="options"></div>
+    </section>
+
+    <section id="result" class="screen hidden result-screen">
+      <div class="result-card">
+        <p class="eyebrow light">你的主要反应模式</p>
+        <div id="resultSeal" class="result-seal"></div>
+        <h1 id="resultName"></h1>
+        <p id="shareTitle" class="share-title"></p>
+        <p id="resultSummary" class="result-summary"></p>
+        <div id="secondaryBadge" class="secondary-badge"></div>
+      </div>
+
+      <section class="report-section">
+        <div class="section-heading"><span>01</span><h2>你的五维分布</h2></div>
+        <div id="scoreBars" class="score-bars"></div>
+        <p class="data-note">这是你在本次24个情境中的相对分布，不代表能力高低。</p>
+      </section>
+
+      <section class="report-section">
+        <div class="section-heading"><span>02</span><h2>这种方式保护了什么</h2></div>
+        <ul id="strengthList" class="feature-list"></ul>
+      </section>
+
+      <section class="report-section accent-section">
+        <div class="section-heading"><span>03</span><h2>容易忽略的一面</h2></div>
+        <p id="blindSpot"></p>
+      </section>
+
+      <section class="report-section two-cards">
+        <div class="mini-card">
+          <span class="mini-label">最适合这样做的时候</span>
+          <p id="bestUsed"></p>
+        </div>
+        <div class="mini-card">
+          <span class="mini-label">下一步练习</span>
+          <p id="growthPrompt"></p>
+        </div>
+      </section>
+
+      <section class="report-section">
+        <div class="section-heading"><span>04</span><h2>三句边界表达</h2></div>
+        <div id="scriptList" class="script-list"></div>
+      </section>
+
+      <div class="result-actions">
+        <button id="shareBtn" class="primary-btn">分享我的结果</button>
+        <button id="restartBtn" class="ghost-btn">重新测试</button>
+      </div>
+      <p class="disclaimer">本测试用于趣味自我观察，不是心理诊断、临床量表、招聘测评或标准化人格测验。</p>
+    </section>
+
+    <section id="error" class="screen hidden center-screen">
+      <h2>页面暂时没有加载成功</h2>
+      <p>请刷新页面后重试。</p>
+      <button class="primary-btn" onclick="location.reload()">重新加载</button>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
